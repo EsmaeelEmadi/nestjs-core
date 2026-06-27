@@ -146,7 +146,8 @@ export abstract class BasePostgresRepository<
         .set(data)
         .where(this.applyScope(query))
         .returning();
-      return result.length > 0 ? result[0] : null;
+      const rows = result as unknown as T["$inferSelect"][];
+      return rows.length > 0 ? rows[0] : null;
     }, "update");
   }
 
@@ -173,7 +174,8 @@ export abstract class BasePostgresRepository<
         .delete(this.table)
         .where(this.applyScope(query))
         .returning();
-      return result.length > 0 ? result[0] : null;
+      const rows = result as unknown as T["$inferSelect"][];
+      return rows.length > 0 ? rows[0] : null;
     }, "delete");
   }
 
@@ -204,7 +206,8 @@ export abstract class BasePostgresRepository<
         .from(this.table)
         .where(this.applyScope(query))
         .limit(1);
-      return result.length > 0 ? result[0] : null;
+      const rows = result as unknown as T["$inferSelect"][];
+      return rows.length > 0 ? rows[0] : null;
     }, "read");
   }
 

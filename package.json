@@ -1,12 +1,12 @@
 {
-  "name": "@esmaeel_emadi/nestjs-core",
+  "name": "@wrk-t/nestjs-core",
   "version": "0.1.0",
   "description": "Core NestJS infrastructure: repository layer, base service, request context, error utilities, and interfaces for multi-tenant applications.",
   "license": "MIT",
   "author": "emadi68moh@gmail.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EsmaeelEmadi/nestjs-core"
+    "url": "https://github.com/wrk-t/nestjs-core"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
